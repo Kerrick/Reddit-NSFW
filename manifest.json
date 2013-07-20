@@ -1,0 +1,24 @@
+{
+    "name": "Open Reddit NSFW Links in Incognito Window",
+    "description": "Open NSFW links on reddit.com in an Incognito window. Inspired by Autonito, called for by Rustyfist.",
+    "version": "0.9.1",
+    "manifest_version": 2,
+    "icons": {
+        "16": "16.png",
+        "48": "48.png"
+    },
+    "permissions": [
+        "tabs",
+        "*://*.reddit.com/*"
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*.reddit.com/*"],
+            "js": ["jquery.min.js", "incognito.js"]
+        }
+    ]
+}
